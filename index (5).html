@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Мастер-класс «Я имею право сказать нет» · Екатерина Шакти</title>
+<meta name="theme-color" content="#C4956A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23C4956A'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='white' font-family='Georgia,serif'%3E%D0%A8%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--gold:#C4956A; --gold-d:#A8875E; --gold-light:#DBC1A8; --gold-bg:rgba(196,149,106,.12); --gold-glow:rgba(196,149,106,.35);
+--bg:#FCF9F7; --bg2:#F5F0EC; --bg3:#EDE6DF; --dark:#211A16; --dark2:#2C2420;
+--txt:#2C2420; --muted:#4A4038; --white:#FFFFFF;
+--bdr:rgba(196,149,106,.25); --bdr2:rgba(44,36,32,.08);
+--sh-sm:0 4px 24px rgba(44,36,32,.05);
+--sh-md:0 8px 40px rgba(44,36,32,.10);
+--sh-lg:0 20px 70px rgba(44,36,32,.16);
+--r:24px; --ease:cubic-bezier(.22,1,.36,1); --t:.4s;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,sans-serif;font-size:17px;line-height:1.72;color:var(--txt);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{-webkit-tap-highlight-color:transparent}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 40px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;color:var(--dark);line-height:1.2}
+.dv{display:flex;align-items:center;justify-content:center;gap:14px}
+.dv-line{height:1px;width:80px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.dv-gem{width:7px;height:7px;border:1.5px solid var(--gold);transform:rotate(45deg);flex-shrink:0}
+.rv{opacity:0;transform:translateY(32px) scale(.98);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+.rv.on{opacity:1;transform:translateY(0) scale(1)}
+@media (prefers-reduced-motion:reduce){
+.rv{opacity:1!important;transform:none!important;transition:none!important}
+html{scroll-behavior:auto}
+}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Manrope',sans-serif;font-weight:600;letter-spacing:.03em;cursor:pointer;border:none;transition:all var(--t) var(--ease);border-radius:100px;position:relative}
+.btn:focus-visible{outline:2px solid var(--gold-d);outline-offset:3px}
+.btn:active{transform:scale(.96)!important}
+.btn-dark{background:var(--dark2);color:var(--bg);font-size:15px;padding:17px 38px}
+.btn-dark:hover{background:var(--gold-d);transform:scale(1.03);box-shadow:0 10px 34px var(--gold-glow)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#fff;font-size:15px;padding:17px 38px;box-shadow:0 6px 24px var(--gold-glow)}
+.btn-gold:hover{transform:scale(1.035);box-shadow:0 14px 40px var(--gold-glow)}
+.btn-outline{background:transparent;color:var(--gold);font-size:15px;padding:15px 34px;border:1.5px solid var(--gold)}
+.btn-outline:hover{background:var(--gold-bg);transform:scale(1.03)}
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 40px 110px;position:relative;background:linear-gradient(155deg,#FCF9F7 0%,#F5F0EC 45%,#EDE6DF 100%);overflow:hidden}
+.hero-orb{position:absolute;border-radius:50%;border:1px solid var(--gold);pointer-events:none;will-change:transform}
+.hero-orb.o1{top:-200px;right:-200px;width:500px;height:500px;opacity:.08}
+.hero-orb.o2{bottom:8%;left:6%;width:160px;height:160px;opacity:.10;border-width:1.5px}
+.hero-orb.o3{top:18%;left:12%;width:8px;height:8px;background:var(--gold);border:none;opacity:.5}
+.hero h1{font-size:clamp(32px,5vw,56px);max-width:820px;margin-bottom:24px}
+.hero h1 .sub{display:block;font-size:0.5em;font-weight:400;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:14px;opacity:0;animation:fsu .9s var(--ease) .3s forwards}
+.hero h1 .title{display:block;font-size:0.9em;font-weight:600;color:var(--dark);margin-bottom:8px;min-height:1.2em}
+.hero h1 .title .tw-cursor{display:inline-block;width:2px;background:var(--gold);margin-left:2px;animation:blink 1s step-end infinite;vertical-align:-2px}
+.hero h1 .desc{display:block;font-size:0.5em;font-weight:600;color:var(--dark);margin-top:12px;opacity:0;animation:fsu .9s var(--ease) 2.4s forwards}
+.hero-sub{font-size:18px;color:var(--muted);max-width:620px;line-height:1.82;margin-bottom:32px;opacity:0;font-weight:500;animation:fsu .9s var(--ease) 2.6s forwards}
+.hero-info{display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:14px;margin-bottom:40px;opacity:0;animation:fsu .9s var(--ease) 2.85s forwards}
+.hero-info-item{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1.5px solid var(--gold);border-radius:100px;padding:10px 20px 10px 14px;box-shadow:0 6px 20px var(--gold-glow)}
+.hero-info-icon{width:30px;height:30px;flex-shrink:0;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:14px}
+.hero-info-text{display:flex;flex-direction:column;align-items:flex-start;line-height:1.25}
+.hero-info-label{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-d);font-weight:700}
+.hero-info-value{font-size:14.5px;color:var(--dark);font-weight:700;white-space:nowrap}
+.hero-cta{opacity:0;animation:fsu .9s var(--ease) 3.05s forwards}
+.hero-scroll{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:0;animation:fsu 1s ease 3.4s forwards}
+.hero-scroll-bar{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:spulse 2.2s ease-in-out infinite 3.8s}
+@keyframes fsu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spulse{0%,100%{opacity:.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.12)}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.sec{padding:110px 0}
+.sec-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.sec-title{font-size:clamp(28px,3.8vw,44px);color:var(--dark);margin-bottom:18px}
+.sec-lead{font-size:18px;color:var(--muted);line-height:1.78;max-width:600px;font-weight:500}
+.speaker{background:var(--bg2);padding:110px 0;position:relative}
+.speaker-grid{display:grid;grid-template-columns:380px 1fr;gap:70px;align-items:start}
+.speaker-photo-wrap{position:relative}
+.speaker-photo-wrap::before{content:'';position:absolute;top:-12px;left:-12px;right:12px;bottom:12px;border:1.5px solid var(--gold);border-radius:var(--r);opacity:.3;pointer-events:none}
+.speaker-photo{position:relative;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-lg);background:var(--bg3)}
+.speaker-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(44,36,32,.35));z-index:1}
+.speaker-photo img{width:100%;height:540px;object-fit:cover;object-position:center top;filter:saturate(.9) contrast(1.05);transition:transform .65s ease}
+.speaker-photo:hover img{transform:scale(1.03)}
+.speaker-name{font-size:clamp(24px,2.8vw,38px);color:var(--dark);margin-bottom:4px}
+.speaker-role{font-size:14.5px;color:var(--gold-d);font-weight:700;letter-spacing:.05em;margin-bottom:26px}
+.creds{display:flex;flex-direction:column;gap:18px}
+.cred{display:flex;align-items:flex-start;gap:14px}
+.cred-icon{width:36px;height:36px;flex-shrink:0;border-radius:10px;background:var(--gold-bg);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.cred-icon svg{width:17px;height:17px;color:var(--gold)}
+.cred-text{font-size:15px;line-height:1.6;color:var(--txt);font-weight:500}
+.cred-text strong{color:var(--dark);font-weight:600}
+.speaker-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;padding-top:28px;border-top:1px solid var(--bdr)}
+.stat-num{font-family:'Playfair Display',serif;font-size:30px;font-weight:600;color:var(--gold);line-height:1;margin-bottom:4px}
+.stat-label{font-size:13px;color:var(--muted);font-weight:600}
+.master-class{background:var(--bg);padding:110px 0;position:relative;overflow:hidden}
+.mc-texture{position:absolute;inset:0;opacity:.5;pointer-events:none;background-image:radial-gradient(circle at 15% 20%,var(--gold-bg) 0,transparent 40%),radial-gradient(circle at 85% 80%,var(--gold-bg) 0,transparent 40%)}
+.mc-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.mc-image{position:relative;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-lg);height:520px}
+.mc-image img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.mc-image:hover img{transform:scale(1.06)}
+.mc-image::after{content:'';position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(to bottom,transparent,var(--bg) 96%);pointer-events:none}
+.mc-text ul{list-style:none;display:flex;flex-direction:column;gap:14px;margin:20px 0 28px}
+.mc-text ul li{display:flex;align-items:flex-start;gap:12px;font-size:16px;line-height:1.6;color:var(--txt);font-weight:500}
+.mc-text ul li::before{content:'✓';color:var(--gold);font-weight:700;font-size:20px;line-height:1}
+.benefits-title{text-align:center;margin-bottom:44px}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.benefit-card{background:var(--white);border-radius:20px;padding:30px 26px;box-shadow:var(--sh-sm);border:1px solid var(--bdr2);transition:all var(--t) var(--ease)}
+.benefit-card:hover{transform:translateY(-6px);box-shadow:var(--sh-md);border-color:var(--gold)}
+.benefit-icon{width:48px;height:48px;border-radius:14px;background:var(--gold-bg);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.benefit-icon svg{width:22px;height:22px;color:var(--gold)}
+.benefit-card h4{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);margin-bottom:6px;font-weight:600}
+.benefit-card p{font-size:14.5px;color:var(--muted);line-height:1.65;font-weight:500}
+.location-card{position:relative;border-radius:var(--r);padding:34px 36px;margin-top:40px;background:linear-gradient(135deg,rgba(196,149,106,.08),rgba(196,149,106,.03));border:1.5px solid var(--gold);box-shadow:0 10px 40px var(--gold-glow);overflow:hidden}
+.location-card::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border:1px solid var(--gold);opacity:.15;border-radius:50%}
+.location-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.location-pin{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 6px 20px var(--gold-glow)}
+.location-head h4{font-family:'Playfair Display',serif;font-size:19px;color:var(--dark);font-weight:600}
+.location-card p{font-size:15px;color:var(--txt);line-height:1.75;position:relative;z-index:1;font-weight:500}
+.location-card p strong{color:var(--gold-d)}
+.bonus-block{position:relative;border-radius:var(--r);padding:34px 36px;margin-top:28px;background:linear-gradient(135deg,#fff,#fcf7f1);border:1.5px solid var(--gold);box-shadow:var(--sh-md);overflow:hidden}
+.bonus-block::before{content:'';position:absolute;inset:0;border-radius:var(--r);border:1px dashed var(--gold-light);margin:8px;pointer-events:none}
+.bonus-head{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.bonus-icon{width:46px;height:46px;border-radius:50%;background:var(--gold-bg);display:flex;align-items:center;justify-content:center;font-size:22px}
+.bonus-block h4{font-family:'Playfair Display',serif;font-size:20px;color:var(--dark);font-weight:600}
+.bonus-block p{font-size:16px;color:var(--txt);line-height:1.7;position:relative;z-index:1;font-weight:500}
+.bonus-block strong.free{color:#fff;background:var(--gold);padding:2px 12px;border-radius:100px;font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;display:inline-block}
+.program{background:var(--bg2);padding:100px 0;position:relative}
+.timeline{position:relative;max-width:760px;margin:50px auto 0;padding-left:44px}
+.timeline::before{content:'';position:absolute;left:19px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--gold),var(--gold-light),transparent)}
+.tl-item{position:relative;padding-bottom:40px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-44px;top:0;width:40px;height:40px;border-radius:50%;background:var(--white);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px var(--gold-glow);z-index:1}
+.tl-dot svg{width:17px;height:17px;color:var(--gold)}
+.tl-card{background:var(--white);border-radius:16px;padding:22px 26px;box-shadow:var(--sh-sm);margin-left:6px}
+.tl-card .step{font-size:11px;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.tl-card h4{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:6px;font-weight:600}
+.tl-card p{font-size:15px;color:var(--muted);line-height:1.65;font-weight:500}
+.tariffs{background:var(--bg2);padding:110px 0}
+.tariff-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:800px;margin:0 auto}
+.tariff-card{background:rgba(255,255,255,.65);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:var(--r);padding:38px 32px 40px;box-shadow:var(--sh-sm);border:1px solid var(--bdr2);transition:all var(--t) var(--ease);text-align:center;position:relative}
+.tariff-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px var(--gold-glow);border-color:var(--gold)}
+.tariff-card.popular{border-color:var(--gold);background:linear-gradient(135deg,rgba(255,255,255,.75),rgba(252,248,243,.75))}
+.tariff-card .price{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--dark);margin:14px 0 8px}
+.tariff-card .price small{font-size:18px;font-weight:600;color:var(--txt)}
+.tariff-card .sub{font-size:14px;color:var(--muted);margin-bottom:24px;font-weight:600}
+.tariff-card .features{list-style:none;text-align:left;margin-bottom:28px}
+.tariff-card .features li{display:flex;align-items:center;gap:10px;font-size:15px;padding:6px 0;border-bottom:1px solid var(--bdr2)}
+.tariff-card .features li:last-child{border-bottom:none}
+.tariff-card .features li::before{content:'✓';color:var(--gold);font-weight:700}
+.cta-section{background:var(--bg);padding:100px 0;text-align:center}
+.cta-section .inner{max-width:680px;margin:0 auto}
+.cta-section .btn{margin:10px}
+.footer{background:var(--dark);padding:80px 0 50px;color:rgba(255,255,255,.82)}
+.footer-inner{max-width:640px;margin:0 auto;text-align:center}
+.footer h2{color:#fff;font-size:clamp(26px,3vw,38px);margin-bottom:20px}
+.footer p{font-size:17px;line-height:1.8;margin-bottom:30px;color:rgba(255,255,255,.85);font-weight:500}
+.footer a{color:var(--gold)}
+.footer .btn{margin-top:16px}
+.footer-bottom{margin-top:50px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:13px}
+.footer-legal{margin-top:50px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);text-align:center}
+.footer-legal-links{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;font-size:14px;margin-bottom:14px;font-weight:600}
+.footer-legal-links a{color:var(--gold);transition:color .3s var(--ease);border-bottom:1px solid transparent}
+.footer-legal-links a:hover{color:var(--gold-light);border-bottom-color:var(--gold-light)}
+.footer-dot{color:rgba(255,255,255,.5)}
+.footer-requisites{font-size:12.5px;color:rgba(255,255,255,.62);letter-spacing:.01em;line-height:1.7;font-weight:500}
+@media(max-width:480px){
+.footer-legal-links{flex-direction:column;gap:6px}
+.footer-dot{display:none}
+}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:rgba(252,249,247,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:12px 18px;box-shadow:0 -8px 30px rgba(44,36,32,.12);transform:translateY(110%);transition:transform .45s var(--ease);display:none;align-items:center;justify-content:center}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta .btn{width:100%;justify-content:center}
+@media(max-width:1024px){
+.speaker-grid{grid-template-columns:300px 1fr;gap:50px}
+.mc-grid{grid-template-columns:1fr;gap:40px}
+.mc-image{height:380px}
+.benefits-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+.wrap{padding:0 22px}
+.hero{padding:100px 22px 80px}
+.sec{padding:80px 0}
+.speaker{padding:80px 0}
+.speaker-grid{grid-template-columns:1fr;gap:30px}
+.speaker-photo img{height:380px}
+.speaker-photo-wrap::before{display:none}
+.tariff-grid{grid-template-columns:1fr;max-width:400px}
+.mc-image{height:280px}
+.benefits-grid{grid-template-columns:1fr}
+.timeline{padding-left:36px}
+.tl-dot{left:-36px;width:32px;height:32px}
+.sticky-cta{display:flex}
+}
+@media(max-width:480px){
+.hero h1{font-size:28px}
+.hero-sub{font-size:16px}
+.hero-info{gap:10px;margin-bottom:32px}
+.hero-info-item{padding:8px 16px 8px 10px}
+.hero-info-icon{width:26px;height:26px;font-size:12px}
+.hero-info-label{font-size:9.5px}
+.hero-info-value{font-size:13.5px}
+.btn{padding:14px 24px;font-size:14px;width:100%;justify-content:center}
+.hero-cta .btn{width:auto}
+.sec-title{font-size:24px}
+.tariff-card .price{font-size:32px}
+.tariff-card{padding:28px 20px}
+.bonus-block,.location-card{padding:22px 20px}
+.bonus-block h4,.location-head h4{font-size:17px}
+}
+@media(max-width:380px){
+.wrap{padding:0 16px}
+.hero{padding:90px 16px 70px}
+.hero h1{font-size:25px}
+.hero-info{flex-direction:column;align-items:stretch}
+.hero-info-item{justify-content:center}
+.speaker-photo img{height:320px}
+.tariff-card{padding:24px 16px}
+}
+</style>
+</head>
+<body>
+<div class="scroll-progress" style="position:fixed;top:0;left:0;width:100%;height:3px;background:rgba(44,36,32,.06);z-index:10000">
+<div class="scroll-progress-bar" id="scrollBar" style="height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold-d));box-shadow:0 0 12px var(--gold-glow);transition:width .1s linear"></div>
+</div>
+<!-- HERO -->
+<section class="hero" id="top">
+<div class="hero-orb o1" data-parallax="0.15"></div>
+<div class="hero-orb o2" data-parallax="0.3"></div>
+<div class="hero-orb o3" data-parallax="0.5"></div>
+<h1>
+<span class="sub">Телесно-ориентированный мастер-класс</span>
+<span class="title" id="typedTitle"></span>
+<span class="desc">Как говорить «нет» из места силы,<br>не разрушая отношения</span>
+</h1>
+<p class="hero-sub">
+Перестать чувствовать вину за отказ. Обозначать личные границы без споров. Сохранять тёплые отношения, даже отказывая.
+</p>
+<div class="hero-info">
+<div class="hero-info-item">
+<div class="hero-info-icon">📅</div>
+<div class="hero-info-text"><span class="hero-info-label">Когда</span><span class="hero-info-value">16 августа, 11:00</span></div>
+</div>
+<div class="hero-info-item">
+<div class="hero-info-icon">📍</div>
+<div class="hero-info-text"><span class="hero-info-label">Где</span><span class="hero-info-value">г. Иркутск</span></div>
+</div>
+<div class="hero-info-item">
+<div class="hero-info-icon">⏱</div>
+<div class="hero-info-text"><span class="hero-info-label">Длительность</span><span class="hero-info-value">1,5 ч.</span></div>
+</div>
+</div>
+<div class="hero-cta">
+<a href="#tariffs" class="btn btn-gold">Выбрать билет</a>
+</div>
+<div class="hero-scroll">
+<div class="hero-scroll-bar"></div>
+<span>листать</span>
+</div>
+</section>
+<!-- СПИКЕР -->
+<section class="speaker" id="speaker">
+<div class="wrap">
+<div class="speaker-grid">
+<div class="speaker-photo-wrap rv">
+<div class="speaker-photo">
+<img src="/foto-mama.jpg" alt="Екатерина Шакти Савинова" loading="lazy" onerror="this.onerror=null;this.src='https://i.pinimg.com/736x/2L/3h/gS/2L3hgSCEr.jpg';">
+</div>
+</div>
+<div>
+<p class="sec-eyebrow rv">Ведущая</p>
+<h2 class="speaker-name rv">Екатерина Шакти Савинова</h2>
+<p class="speaker-role rv">Психолог · Создатель методики «Хакинг реальности»</p>
+<div class="dv dv--left" style="justify-content:flex-start;margin-bottom:28px"><div class="dv-line"></div><div class="dv-gem"></div><div class="dv-line" style="width:40px"></div></div>
+<div class="creds">
+<div class="cred rv d1"><div class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><p class="cred-text">Практикующий психолог, дипломированный специалист. <strong>Стаж — более 22 лет.</strong></p></div>
+<div class="cred rv d2"><div class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><p class="cred-text">Опыт работы с карточными оракулами — <strong>более 34 лет.</strong></p></div>
+<div class="cred rv d3"><div class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><p class="cred-text">Создатель Школы трансформации через Таро и психологию с <strong>государственной образовательной лицензией.</strong></p></div>
+<div class="cred rv d4"><div class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="cred-text">Создатель авторской методики <strong>«Хакинг реальности».</strong></p></div>
+<div class="cred rv d1"><div class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><p class="cred-text">Специалист по эмоционально-образной терапии.</p></div>
+<div class="cred rv d2"><div class="cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><p class="cred-text">Сертифицированный специалист по телесно-ориентированной терапии <strong>(международная программа, США).</strong></p></div>
+</div>
+<div class="speaker-stats rv">
+<div class="stat"><div class="stat-num" data-count="22">0<span>+</span></div><div class="stat-label">лет практики</div></div>
+<div class="stat"><div class="stat-num" data-count="34">0<span>+</span></div><div class="stat-label">лет с карточными оракулами</div></div>
+<div class="stat"><div class="stat-num" data-count="1">0</div><div class="stat-label">мастер-класс для вас</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ОПИСАНИЕ МАСТЕР-КЛАССА -->
+<section class="master-class" id="about">
+<div class="mc-texture"></div>
+<div class="wrap">
+<div class="mc-grid">
+<div class="mc-image rv">
+<img src="/foto-bg.jpg" alt="Мастер-класс «Я имею право сказать нет»" loading="lazy">
+</div>
+<div class="mc-text rv">
+<p class="sec-eyebrow">О мастер-классе</p>
+<h2 class="sec-title" style="font-size:clamp(24px,3vw,36px);margin-bottom:12px;">Как говорить «нет» из места силы, не разрушая отношения</h2>
+<p style="color:var(--txt);line-height:1.8;margin-bottom:16px;font-weight:500;">
+Каждый из нас хоть раз соглашался на то, что нам не подходит, лишь бы избежать конфликта или чувства вины. Мы годами терпим неудобные просьбы, нарушаем собственные планы и позволяем другим переступать наши границы.
+</p>
+<p style="color:var(--txt);line-height:1.8;margin-bottom:24px;font-weight:500;">
+На этом мастер-классе мы ломаем этот стереотип. Мы не учимся «быть жёсткими» — мы находим то состояние внутри себя, в котором отказ даётся легко, спокойно и убедительно.
+</p>
+<div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:8px;">
+<span style="background:var(--gold-bg);padding:6px 18px;border-radius:100px;font-size:14px;color:var(--dark);font-weight:700;">⏱ 1,5–3 часа</span>
+<span style="background:var(--gold-bg);padding:6px 18px;border-radius:100px;font-size:14px;color:var(--dark);font-weight:700;">🧘 Телесные практики</span>
+<span style="background:var(--gold-bg);padding:6px 18px;border-radius:100px;font-size:14px;color:var(--dark);font-weight:700;">👥 Живое взаимодействие</span>
+</div>
+</div>
+</div>
+<!-- СЕТКА ПРЕИМУЩЕСТВ -->
+<div class="benefits-title rv" style="margin-top:90px;">
+<p class="sec-eyebrow">Этот мастер-класс поможет вам</p>
+<h2 class="sec-title">Что изменится после встречи</h2>
+</div>
+<div class="benefits-grid">
+<div class="benefit-card rv d1">
+<div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+<h4>Без вины</h4>
+<p>Перестать чувствовать вину, когда говорите «нет».</p>
+</div>
+<div class="benefit-card rv d2">
+<div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+<h4>Осознанность</h4>
+<p>Осознать свой сценарий защиты границ.</p>
+</div>
+<div class="benefit-card rv d3">
+<div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+<h4>Место силы</h4>
+<p>Обнаружить и соединиться со своим внутренним «местом силы».</p>
+</div>
+<div class="benefit-card rv d4">
+<div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+<h4>Границы без спора</h4>
+<p>Обозначать личные границы спокойно, без конфликтов.</p>
+</div>
+<div class="benefit-card rv d1">
+<div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+<h4>Без страха отвержения</h4>
+<p>Убрать страх быть отвергнутым за отказ.</p>
+</div>
+<div class="benefit-card rv d2">
+<div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+<h4>Тёплые отношения</h4>
+<p>Сохранять близость и теплоту, даже отказывая.</p>
+</div>
+</div>
+<!-- ЛОКАЦИЯ -->
+<div class="location-card rv" style="margin-top:70px;">
+<div class="location-head">
+<div class="location-pin">📍</div>
+<h4>Формат проведения — офлайн</h4>
+</div>
+<p>
+Мастер-класс проходит <strong>офлайн в городе Иркутск</strong>, начало в <strong>11:00 по Иркутскому времени</strong>.
+Точный адрес мы направим всем зарегистрированным участникам. Мероприятие состоится в уютном помещении
+в <strong>Октябрьском районе</strong> — пространство создано специально для участников, чтобы каждый чувствовал себя
+комфортно и безопасно.
+</p>
+</div>
+<!-- БОНУС -->
+<div class="bonus-block rv" style="margin-top:28px;">
+<div class="bonus-head">
+<div class="bonus-icon">🎁</div>
+<h4>Бонус для каждого участника</h4>
+</div>
+<p><span class="free">Бесплатно</span> · 30–40-минутная консультация со мной по методу «Хакинг реальности». На ней мы определим, на каком жизненном этапе вы находитесь, и я дам рекомендации, что делать дальше.</p>
+</div>
+</div>
+</section>
+<!-- ПРОГРАММА -->
+<section class="program" id="program">
+<div class="wrap">
+<div class="rv" style="max-width:800px;margin:0 auto;text-align:center;">
+<p class="sec-eyebrow">Программа</p>
+<h2 class="sec-title">Что вас ждёт</h2>
+</div>
+<div class="timeline">
+<div class="tl-item rv d1">
+<div class="tl-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+<div class="tl-card"><div class="step">Шаг 01</div><h4>Корни сценария</h4><p>Почему мы боимся говорить «нет»? Откуда берётся чувство долга и вины.</p></div>
+</div>
+<div class="tl-item rv d2">
+<div class="tl-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+<div class="tl-card"><div class="step">Шаг 02</div><h4>Психология границ</h4><p>Как мы их строим и почему позволяем нарушать.</p></div>
+</div>
+<div class="tl-item rv d3">
+<div class="tl-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+<div class="tl-card"><div class="step">Шаг 03</div><h4>Телесные практики</h4><p>Проживание отказа через тело — почувствуете разницу между «слабым да» и «сильным нет».</p></div>
+</div>
+<div class="tl-item rv d4">
+<div class="tl-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+<div class="tl-card"><div class="step">Шаг 04</div><h4>Алгоритм отказа</h4><p>Как отказывать, чтобы вас слышали — вербальные и невербальные техники.</p></div>
+</div>
+<div class="tl-item rv d1">
+<div class="tl-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+<div class="tl-card"><div class="step">Шаг 05</div><h4>Групповая практика</h4><p>Безопасное пространство для отработки навыка «нет» в реальных сценариях с разбором ошибок.</p></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ТАРИФЫ -->
+<section class="tariffs" id="tariffs">
+<div class="wrap">
+<div class="rv" style="text-align:center;margin-bottom:60px;">
+<p class="sec-eyebrow">Выберите билет</p>
+<h2 class="sec-title">Присоединяйтесь к мастер-классу</h2>
+<p class="sec-lead" style="margin:0 auto;">Живое участие, телесные практики и личный опыт. Количество мест ограничено.</p>
+</div>
+<div class="tariff-grid">
+<div class="tariff-card rv d1">
+<h3 style="font-size:22px;font-weight:600;color:var(--dark);">Один билет</h3>
+<div class="price">1 800 <small>₽</small></div>
+<div class="sub">для одного участника</div>
+<ul class="features">
+<li>Участие в мастер-классе (1,5–3 ч)</li>
+<li>Все телесные практики</li>
+<li>Групповая работа</li>
+<li>Бонус: бесплатная консультация</li>
+</ul>
+<a href="https://shaktischool.getcourse.ru/i_can_say_no_1" target="_blank" rel="noopener" class="btn btn-gold" style="width:100%;justify-content:center;">Оформить заказ</a>
+</div>
+<div class="tariff-card popular rv d2">
+<div style="background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 14px;border-radius:100px;display:inline-block;margin-bottom:12px;">Выгодно</div>
+<h3 style="font-size:22px;font-weight:600;color:var(--dark);">Билет на двоих</h3>
+<div class="price">3 000 <small>₽</small></div>
+<div class="sub">для пары, подруги или коллеги</div>
+<ul class="features">
+<li>2 места на мастер-класс</li>
+<li>Все практики для обоих</li>
+<li>Групповая работа вдвоём</li>
+<li>Бонус: 2 консультации</li>
+</ul>
+<a href="https://shaktischool.getcourse.ru/i_can_say_no_2" target="_blank" rel="noopener" class="btn btn-gold" style="width:100%;justify-content:center;">Оформить заказ</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="cta-section">
+<div class="wrap">
+<div class="inner rv">
+<div class="dv" style="margin-bottom:40px;"><div class="dv-line"></div><div class="dv-gem"></div><div class="dv-line"></div></div>
+<h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,40px);color:var(--dark);">Чувствуете, что это про вас?</h2>
+<p style="font-size:18px;color:var(--txt);line-height:1.8;margin:20px 0 32px;font-weight:500;">
+Не ждите, пока границы продолжат нарушать. Приходите, чтобы научиться говорить «нет» легко и уверенно.
+</p>
+<a href="#tariffs" class="btn btn-gold">Выбрать билет</a>
+</div>
+</div>
+</section>
+<!-- ФУТЕР -->
+<footer class="footer" id="contact">
+<div class="wrap">
+<div class="footer-inner">
+<div class="dv" style="margin-bottom:40px;"><div class="dv-line" style="background:linear-gradient(90deg,transparent,rgba(196,149,106,.4),transparent);"></div><div class="dv-gem"></div><div class="dv-line" style="background:linear-gradient(90deg,transparent,rgba(196,149,106,.4),transparent);"></div></div>
+<h2>Остались вопросы?</h2>
+<p>Напишите мне в Telegram, и я отвечу на всё, что вас волнует.</p>
+<a href="http://t.me/tasamayashakti" target="_blank" rel="noopener" class="btn btn-outline" style="border-color:rgba(196,149,106,.4);color:var(--gold);margin-bottom:30px;">Написать в Telegram</a>
+<div class="footer-legal">
+<div class="footer-legal-links">
+<a href="https://drive.google.com/file/d/13U4rXFVLzRFpOFi61b-nb4YxHObt8lzc/view?usp=sharing" target="_blank" rel="noopener">Образовательная лицензия</a>
+<span class="footer-dot">·</span>
+<a href="https://shaktischool.getcourse.ru/privacy_policy" target="_blank" rel="noopener">Политика конфиденциальности</a>
+<span class="footer-dot">·</span>
+<a href="https://shaktischool.getcourse.ru/oferta_shkti_school" target="_blank" rel="noopener">Договор оферты</a>
+</div>
+<div class="footer-requisites">
+ИП Савинова Екатерина Юрьевна · ИНН 381100625712 · ОГРНИП 321385000101437
+</div>
+<div style="font-size:14px;color:rgba(255,255,255,.65);margin-top:14px;font-weight:500;">
+© 2026 Екатерина Шакти Савинова · Мастер-класс «Я имею право сказать нет»
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+<a href="#tariffs" class="btn btn-gold">Выбрать билет</a>
+</div>
+<script>
+const io = new IntersectionObserver(entries => {
+entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+const scrollBar = document.getElementById('scrollBar');
+window.addEventListener('scroll', () => {
+const h = document.documentElement;
+const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+if(scrollBar) scrollBar.style.width = scrolled + '%';
+}, { passive: true });
+const statEls = document.querySelectorAll('.stat-num');
+const statIO = new IntersectionObserver(entries => {
+entries.forEach(e => {
+if(e.isIntersecting){
+const el = e.target;
+const target = parseInt(el.getAttribute('data-count'), 10);
+const suffix = el.querySelector('span') ? el.querySelector('span').outerHTML : '';
+const dur = 2200;
+const start = performance.now();
+function tick(now){
+const p = Math.min((now - start) / dur, 1);
+const eased = 1 - Math.pow(1 - p, 4);
+const cur = Math.round(target * eased);
+el.innerHTML = cur + suffix;
+if(p < 1) requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+statIO.unobserve(el);
+}
+});
+}, { threshold: 0.4 });
+statEls.forEach(el => statIO.observe(el));
+(function(){
+const el = document.getElementById('typedTitle');
+if(!el) return;
+const text = '«Я имею право сказать нет»';
+let i = 0;
+el.innerHTML = '<span class="tw-cursor">&nbsp;</span>';
+const cursor = el.querySelector('.tw-cursor');
+function type(){
+if(i <= text.length){
+el.textContent = text.slice(0, i);
+el.appendChild(cursor);
+i++;
+setTimeout(type, 45);
+}
+}
+setTimeout(type, 500);
+})();
+const orbs = document.querySelectorAll('[data-parallax]');
+let ticking = false;
+function updateParallax(){
+const y = window.scrollY;
+orbs.forEach(o => {
+const speed = parseFloat(o.dataset.parallax);
+o.style.transform = 'translateY(' + (y * speed) + 'px)';
+});
+ticking = false;
+}
+window.addEventListener('scroll', () => {
+if(!ticking){ requestAnimationFrame(updateParallax); ticking = true; }
+}, { passive: true });
+const stickyCta = document.getElementById('stickyCta');
+const tariffsSection = document.getElementById('tariffs');
+window.addEventListener('scroll', () => {
+if(window.innerWidth > 768 || !stickyCta || !tariffsSection) return;
+const scrolledPastHero = window.scrollY > window.innerHeight * 0.8;
+const tariffsRect = tariffsSection.getBoundingClientRect();
+const inTariffs = tariffsRect.top < window.innerHeight && tariffsRect.bottom > 0;
+if(scrolledPastHero && !inTariffs){
+stickyCta.classList.add('show');
+} else {
+stickyCta.classList.remove('show');
+}
+}, { passive: true });
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if(target) target.scrollIntoView({behavior:'smooth'});
+});
+});
+</script>
+</body>
+</html>
